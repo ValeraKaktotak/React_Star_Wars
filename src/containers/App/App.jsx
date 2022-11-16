@@ -1,12 +1,12 @@
-import cn from 'classnames'
+import {getApiResource} from '../../utils/network'
 import style from './App.module.css'
 
 const App = () => {
-  return (
-    <div className={cn(style.App, style.text)}>
-      Hello
-    </div>
-  );
+    return (
+        <div className={style.App}>
+            Hello
+        </div>
+    );
 }
 
 export default App;
