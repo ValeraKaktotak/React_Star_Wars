@@ -1,11 +1,12 @@
 import {useState} from "react";
 import style from "../containers/PeoplePage/PeoplePage.module.css";
+import ErrorMessage from "../components/ErrorMessage";
 
 const withErrorApi = (Component) => {
     const Container = (props) => {
         const[errorApi, setErrorApi] = useState(false)
         if(errorApi){
-            return <h2 className={style.error}>ERROR</h2>
+            return <ErrorMessage />
         }
         else
         return(

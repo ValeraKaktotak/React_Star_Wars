@@ -29,7 +29,7 @@ const PeoplePage = ({setErrorApi}) => {
     }
 
     useEffect(() => {
-        getApiData(API_PEOPLE+1)
+        getApiData(API_PEOPLE)
     }, [])
 
     return (

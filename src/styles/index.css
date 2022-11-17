@@ -2,7 +2,9 @@
   --color-gray: #252424;
   --color-white: #fff;
   --color-black: #000;
+  --color-yellow: #ffff00;
 }
 body {
   background: var(--color-gray);
+  font-family: sans-serif;
 }
