@@ -1,0 +1,18 @@
+.HeroList__container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.HeroList__item{
+    width: 200px;
+    margin: 20px;
+    background: var(--color-white);
+    cursor: pointer;
+    border-radius: 6px;
+    text-align: center;
+}
+.HeroList__photo{
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}

@@ -1,6 +1,4 @@
 
-const SWAPI_ROOT = 'https://www.swapi.tech/api/';
-const SWAPI_PEOPLE = 'people';
 
 export const getApiResource = async(url) => {
     try{
@@ -15,8 +13,3 @@ export const getApiResource = async(url) => {
         return false
     }
 }
-
-(async() => {
-    let people = await getApiResource(SWAPI_ROOT+SWAPI_PEOPLE)
-    console.log(people)
-})()

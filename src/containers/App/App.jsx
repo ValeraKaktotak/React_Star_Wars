@@ -1,10 +1,10 @@
-import {getApiResource} from '../../utils/network'
+import PeoplePage from "../PeoplePage";
 import style from './App.module.css'
 
 const App = () => {
     return (
         <div className={style.App}>
-            Hello
+            <PeoplePage />
         </div>
     );
 }
