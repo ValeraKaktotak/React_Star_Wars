@@ -1,3 +1,6 @@
-.people_page{
-    display: flex;
+.people_page h1{
+    color: var(--color-white);
+}
+.error{
+    color: var(--color-white);
 }
