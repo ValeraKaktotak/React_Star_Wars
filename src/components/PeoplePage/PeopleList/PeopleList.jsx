@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import style from './PeopleList.module.css'
 
 const PeopleList = ({people}) => {
