@@ -1,9 +1,10 @@
 import {useEffect, useState} from "react";
-import {getApiResource} from "../../utils/network";
-import {API_PEOPLE} from "../../constants/api";
-import {getPeopleId, getPeopleImg} from "../../services/getPeopleData";
-import PeopleList from "../../components/PeoplePage/PeopleList";
+import PropTypes from 'prop-types';
 import withErrorApi from "../../hoc-helpers/withErrorApi";
+import PeopleList from "../../components/PeoplePage/PeopleList";
+import {getApiResource} from "../../utils/network";
+import {getPeopleId, getPeopleImg} from "../../services/getPeopleData";
+import {API_PEOPLE} from "../../constants/api";
 
 
 const PeoplePage = ({setErrorApi}) => {
@@ -38,6 +39,9 @@ const PeoplePage = ({setErrorApi}) => {
             {people && <PeopleList people={people}/>}
         </>
     );
+}
+PeoplePage.propTypes = {
+    setErrorApi: PropTypes.func
 }
 
 export default withErrorApi(PeoplePage);

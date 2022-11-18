@@ -1,5 +1,4 @@
 import {useState} from "react";
-import style from "../containers/PeoplePage/PeoplePage.module.css";
 import ErrorMessage from "../components/ErrorMessage";
 
 const withErrorApi = (Component) => {
