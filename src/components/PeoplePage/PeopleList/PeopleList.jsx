@@ -14,5 +14,8 @@ const PeopleList = ({people}) => {
         </div>
     )
 }
+PeopleList.propTypes = {
+    people: PropTypes.array
+}
 
 export default PeopleList
