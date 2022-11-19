@@ -1,3 +1,16 @@
 .not_found_page{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+.not_found_page__text{
+    color: var(--color-white);
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: var(--text-shadow-blue);
+}
+.not_found_page__yellow{
+    color: var(--color-yellow);
 }
