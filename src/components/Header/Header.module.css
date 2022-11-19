@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.container a{
+    color: var(--color-white);
+    text-shadow: var(--text-shadow-yellow);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+.container :global(a.active){
+    border: 2px solid var(--color-violet);
+    color: var(--color-violet);
+    text-shadow: none;
+}
+.link{
+    font-weight: bold;
+    min-width: 70px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.link:not(:last-child){
+    margin-right: 20px;
+}

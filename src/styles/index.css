@@ -3,7 +3,12 @@
   --color-white: #fff;
   --color-black: #000;
   --color-yellow: #ffff00;
+  --color-blue: #6a83fb;
+  --color-violet: #ae72c2;
   --transition: .4s;
+  --text-shadow-yellow:
+    0 0 2px var(--color-white),
+    0 0 20px var(--color-blue);
 
   /*Theme settings*/
   --theme-default-header-color: #ffff46;
@@ -20,4 +25,5 @@ body {
   font-size: 26px;
   text-shadow: 0 0 2px var(--color-black);
   transition: color var(--transition);
+  text-decoration: none;
 }
