@@ -9,7 +9,7 @@ const NotFoundPage = () => {
         <div className={style.not_found_page}>
             <img src={img} alt="404"/>
             <div className={style.not_found_page__text}>
-                No math for <span className={style.not_found_page__yellow}>{currentUrl.pathname}</ span>
+                No match for <span className={style.not_found_page__yellow}>{currentUrl.pathname}</ span>
             </div>
         </div>
     )
