@@ -6,7 +6,7 @@ const Header = () => {
     return(
         <div className={style.container}>
             <NavLink className={cn("header__text", style.link)} to="/">Home</NavLink>
-            <NavLink className={cn("header__text", style.link)} to="/people">People</NavLink>
+            <NavLink className={cn("header__text", style.link)} to="/people?page=1">People</NavLink>
             <NavLink className={cn("header__text", style.link)} to="/not-found">Not Found</NavLink>
         </div>
     )

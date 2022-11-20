@@ -4,11 +4,14 @@ import withErrorApi from "../../hoc-helpers/withErrorApi";
 import PeopleList from "../../components/PeoplePage/PeopleList";
 import {getApiResource} from "../../utils/network";
 import {getPeopleId, getPeopleImg} from "../../services/getPeopleData";
+import {useQueryParams} from "../../hooks/useQueryParams";
 import {API_PEOPLE} from "../../constants/api";
 
 
 const PeoplePage = ({setErrorApi}) => {
     const [people, setPeople] = useState(null)
+
+    const queryPageNumber = useQueryParams().get('page')
 
     const getApiData = async (url) => {
         let people = await getApiResource(url)
@@ -30,7 +33,7 @@ const PeoplePage = ({setErrorApi}) => {
     }
 
     useEffect(() => {
-        getApiData(API_PEOPLE)
+        getApiData(API_PEOPLE+queryPageNumber)
     }, [])
 
     return (
