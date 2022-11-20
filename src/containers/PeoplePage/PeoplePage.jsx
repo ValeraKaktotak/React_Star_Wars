@@ -12,6 +12,12 @@ const PeoplePage = ({setErrorApi}) => {
     const [people, setPeople] = useState(null)
 
     const queryPageNumber = useQueryParams().get('page')
+    let [nextPage, setNextPage] = useState(Number(queryPageNumber) + 1)
+    let [prevPage, setPrevPage] = useState(false)
+
+
+    console.log('next', nextPage)
+    console.log('prev', prevPage)
 
     const getApiData = async (url) => {
         let people = await getApiResource(url)
@@ -26,6 +32,10 @@ const PeoplePage = ({setErrorApi}) => {
                 }
             })
             setPeople(peopleList)
+            if(queryPageNumber > 1){
+                setPrevPage(Number(queryPageNumber) - 1)
+            }
+            setNextPage(Number(queryPageNumber)+1)
             setErrorApi(false)
         } else {
             setErrorApi(true)
@@ -34,7 +44,7 @@ const PeoplePage = ({setErrorApi}) => {
 
     useEffect(() => {
         getApiData(API_PEOPLE+queryPageNumber)
-    }, [])
+    }, [queryPageNumber])
 
     return (
         <>
