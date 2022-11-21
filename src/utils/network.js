@@ -1,4 +1,14 @@
+import {HTTP, HTTPS} from '../constants/api'
 
+/**
+ * Изменяет URL с HTTP на HTTPS
+ *@param {String} url - изменяемый урл
+ *@returns {String} - изменнный урл
+ * */
+export const changeHTTP = (url) => {
+    const result = url ? url.replace(HTTP, HTTPS): url;
+    return result
+}
 
 export const getApiResource = async(url) => {
     try{

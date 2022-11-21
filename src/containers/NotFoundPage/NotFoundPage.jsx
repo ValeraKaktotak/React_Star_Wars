@@ -4,7 +4,6 @@ import style from './NotFoundPage.module.css'
 
 const NotFoundPage = () => {
     const currentUrl = useLocation()
-    console.log(currentUrl)
     return(
         <div className={style.not_found_page}>
             <img src={img} alt="404"/>
