@@ -1,0 +1,25 @@
+.button{
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 600;
+
+    min-width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+
+    background: none;
+    outline: none;
+    border: none;
+
+    transition: .4s;
+    cursor: pointer;
+}
+
+.dark{
+    border: 1px solid #fff;
+    color: #fff;
+}
+.white{
+    border: 1px solid #000;
+    color: #000;
+}
