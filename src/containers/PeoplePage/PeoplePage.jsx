@@ -16,6 +16,7 @@ const PeoplePage = ({setErrorApi}) => {
     // let [nextPage, setNextPage] = useState(null)
     // let [prevPage, setPrevPage] = useState(null)
     let [pageCount, setPageCount] = useState(queryPageNumber)
+    let [peopleCount, setPeopleCount] = useState(false)
 
 
     const getApiData = async (url) => {
@@ -32,6 +33,7 @@ const PeoplePage = ({setErrorApi}) => {
             })
             setPeople(peopleList)
             setPageCount(getPeoplePageCount(url))
+            setPeopleCount(peopleData.count)
             // setPrevPage(pageCount - 1)
             // setNextPage(pageCount + 1)
             setErrorApi(false)
@@ -51,6 +53,7 @@ const PeoplePage = ({setErrorApi}) => {
                 // nextPage={nextPage}
                 // prevPage={prevPage}
                 getApiData={getApiData}
+                peopleCount={peopleCount}
             />
             {people && <PeopleList people={people}/>}
         </>
