@@ -7,19 +7,20 @@ import {getApiResource} from "../../utils/network";
 import {getPeopleId, getPeopleImg, getPeoplePageCount} from "../../services/getPeopleData";
 import {useQueryParams} from "../../hooks/useQueryParams";
 import {API_PEOPLE} from "../../constants/api";
+import PreLoader from "../../components/PreLoader";
 
 
 const PeoplePage = ({setErrorApi}) => {
     let [people, setPeople] = useState(null)
+    let [isLoading, setIsLoading] = useState(false)
 
     let queryPageNumber = Number(useQueryParams().get('page'))
-    // let [nextPage, setNextPage] = useState(null)
-    // let [prevPage, setPrevPage] = useState(null)
     let [pageCount, setPageCount] = useState(queryPageNumber)
     let [peopleCount, setPeopleCount] = useState(false)
 
-
     const getApiData = async (url) => {
+        setIsLoading(true)
+
         let peopleData = await getApiResource(url)
         if (peopleData) {
             const peopleList = peopleData.results.map(({name, url}) => {
@@ -34,12 +35,11 @@ const PeoplePage = ({setErrorApi}) => {
             setPeople(peopleList)
             setPageCount(getPeoplePageCount(url))
             setPeopleCount(peopleData.count)
-            // setPrevPage(pageCount - 1)
-            // setNextPage(pageCount + 1)
             setErrorApi(false)
         } else {
             setErrorApi(true)
         }
+        setIsLoading(false)
     }
 
     useEffect(() => {
@@ -48,14 +48,17 @@ const PeoplePage = ({setErrorApi}) => {
 
     return (
         <>
-            <PeopleNavigation
-                pageCount={pageCount}
-                // nextPage={nextPage}
-                // prevPage={prevPage}
-                getApiData={getApiData}
-                peopleCount={peopleCount}
-            />
-            {people && <PeopleList people={people}/>}
+            {!isLoading ?
+                <div>
+                    <PeopleNavigation
+                        pageCount={pageCount}
+                        getApiData={getApiData}
+                        peopleCount={peopleCount}
+                    />
+                    {people && <PeopleList people={people}/>}}
+                </div> :
+                <PreLoader/>
+            }
         </>
     );
 }
