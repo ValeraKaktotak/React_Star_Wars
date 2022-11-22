@@ -29,7 +29,7 @@ const App = () => {
                         <Route
                             key={index}
                             path={element.path}
-                            element={element.component()}
+                            element={<element.component />}
                         />
                     ))}
                 </ Routes>
