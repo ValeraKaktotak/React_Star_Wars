@@ -1,6 +1,7 @@
 import style from './PeopleNavigation.module.css'
 import {Link} from "react-router-dom";
 import {SWAPI_PAGE_NUMBER, API_PEOPLE} from "../../../constants/api";
+import UiButton from "../../Ui/UiButton";
 
 const PeopleNavigation = ({pageCount, getApiData, peopleCount}) => {
     const page = SWAPI_PAGE_NUMBER
@@ -13,16 +14,17 @@ const PeopleNavigation = ({pageCount, getApiData, peopleCount}) => {
     }
     return(
         <div className={style.navigator}>
-
-            <Link to={`/people${page}${pageCount-1}`}>
-                <button onClick={handleChangePrev} disabled={pageCount <= 1}>
-                    PREVIOUS
-                </button>
+            <Link className={style.navigator__link} to={`/people${page}${pageCount-1}`}>
+                <UiButton text='PREVIOUS'
+                          onClick={handleChangePrev}
+                          disabled={pageCount <= 1}
+                />
             </Link>
-            <Link to={`/people${page}${pageCount+1}`}>
-                <button onClick={handleChangeNext} disabled={pageCount >= peoplePageCount}>
-                    NEXT
-                </button>
+            <Link className={style.navigator__link} to={`/people${page}${pageCount+1}`}>
+                <UiButton text='NEXT'
+                          onClick={handleChangeNext}
+                          disabled={pageCount >= peoplePageCount}
+                />
             </Link>
         </div>
     )
