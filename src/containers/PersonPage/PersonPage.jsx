@@ -1,13 +1,17 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
+import PersonInfo from "../../components/PersonPage/PersonInfo";
 import PreLoader from "../../components/PreLoader";
 import withErrorApi from "../../hoc-helpers/withErrorApi";
 import {getApiResource} from "../../utils/network";
+import {getPeopleImg} from "../../services/getPeopleData";
 import {API_PERSON} from "../../constants/api";
 import style from './PersonPage.module.css'
+import PersonPhoto from "../../components/PersonPage/PersonPhoto";
 
 const PersonPage = ({setErrorApi}) => {
     let [person, setPerson] = useState(null)
+    let [personImg, setPersonImg] = useState(null)
     let [personName, setPersonName] = useState(null)
     let [isLoading, setIsLoading] = useState(false)
     let id = useParams().id
@@ -27,6 +31,7 @@ const PersonPage = ({setErrorApi}) => {
                     {title: 'skin_color', data: res.skin_color},
                 ])
                 setPersonName(res.name)
+                setPersonImg(getPeopleImg(id))
                 setIsLoading(true)
                 setErrorApi(false)
             }else{
@@ -42,9 +47,10 @@ const PersonPage = ({setErrorApi}) => {
                 <PreLoader/>:
                 <div>
                     <h1>{personName}</h1>
-                    {person.map(({title, data = 'unknown'})=>{
-                        return <p key={title}>{title}: {data}</p>
-                    })}
+                    <div className={style.personPage__infoBlock}>
+                        <PersonPhoto photo={personImg} />
+                        <PersonInfo personData={person} />
+                    </div>
                 </div>
             }
         </div>

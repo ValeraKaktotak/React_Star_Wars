@@ -1,3 +1,8 @@
 .personPage{
     color: var(--color-white)
 }
+
+.personPage__infoBlock{
+    display: flex;
+    justify-content: left;
+}
