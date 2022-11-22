@@ -37,3 +37,6 @@ body {
   transition: color var(--transition);
   text-decoration: none;
 }
+a{
+  text-decoration: none;
+}
