@@ -14,13 +14,13 @@ const PeopleNavigation = ({pageCount, getApiData, peopleCount}) => {
     }
     return(
         <div className={style.navigator}>
-            <Link to={`/people${page}${pageCount-1}`}>
+            <Link className={style.navigator__link} to={`/people${page}${pageCount-1}`}>
                 <UiButton text='PREVIOUS'
                           onClick={handleChangePrev}
                           disabled={pageCount <= 1}
                 />
             </Link>
-            <Link to={`/people${page}${pageCount+1}`}>
+            <Link className={style.navigator__link} to={`/people${page}${pageCount+1}`}>
                 <UiButton text='NEXT'
                           onClick={handleChangeNext}
                           disabled={pageCount >= peoplePageCount}

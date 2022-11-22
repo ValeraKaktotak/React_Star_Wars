@@ -1,7 +1,7 @@
 .button{
-    font-size: 14px;
-    font-family: sans-serif;
-    font-weight: 600;
+    font-size: var(--font-size-small);
+    font-family: var(--font-family-main);
+    font-weight: var(--font-weight-bold);
 
     min-width: 100px;
     padding: 10px;
@@ -11,15 +11,30 @@
     outline: none;
     border: none;
 
-    transition: .4s;
+    transition: var(--transition);
     cursor: pointer;
+}
+.button:disabled,
+.button:disabled:hover{
+    color: var(--color-gray);
+    background: transparent;
+    border: 1px solid var(--color-gray);
+    cursor: auto;
 }
 
 .dark{
-    border: 1px solid #fff;
-    color: #fff;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+}
+.dark:hover{
+    background: var(--color-white);
+    color: var(--color-black);
 }
 .white{
-    border: 1px solid #000;
-    color: #000;
+    border: 1px solid var(--color-black);
+    color: var(--color-black);
+}
+.white:hover{
+    background: var(--color-black);
+    color: var(--color-white);
 }

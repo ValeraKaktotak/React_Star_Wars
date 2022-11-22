@@ -2,3 +2,6 @@
     display: flex;
     justify-content: center;
 }
+.navigator__link{
+    margin: 0 20px;
+}
