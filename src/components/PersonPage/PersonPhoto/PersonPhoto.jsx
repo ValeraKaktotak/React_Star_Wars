@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 const PersonPhoto = ({photo, name}) => {
     return(
-        <div>
-            <img src={photo} alt={name}/>
+        <div className={style.personPhoto}>
+            <img className={style.personPhoto__img} src={photo} alt={name}/>
         </div>
     )
 }
