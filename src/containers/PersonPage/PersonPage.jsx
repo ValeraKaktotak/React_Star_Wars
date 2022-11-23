@@ -21,14 +21,13 @@ const PersonPage = ({setErrorApi}) => {
             let res = await getApiResource(API_PERSON+id)
             if(res){
                 setPerson([
-                    {title: 'birth_year', data: res.birth_year},
-                    {title: 'eye_color', data: res.eye_color},
-                    {title: 'gender', data: res.gender},
-                    {title: 'hair_color', data: res.hair_color},
-                    {title: 'height', data: res.height},
-                    {title: 'home_world', data: res.homeworld},
-                    {title: 'mass', data: res.mass},
-                    {title: 'skin_color', data: res.skin_color},
+                    {title: 'Birth year', data: res.birth_year},
+                    {title: 'Eye color', data: res.eye_color},
+                    {title: 'Gender', data: res.gender},
+                    {title: 'Hair color', data: res.hair_color},
+                    {title: 'Height', data: res.height},
+                    {title: 'Mass', data: res.mass},
+                    {title: 'Skin color', data: res.skin_color},
                 ])
                 setPersonName(res.name)
                 setPersonImg(getPeopleImg(id))

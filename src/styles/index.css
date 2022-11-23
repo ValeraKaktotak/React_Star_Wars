@@ -12,6 +12,9 @@
   --text-shadow-blue:
           0 0 2px var(--color-white),
           0 0 20px var(--color-blue);
+  --text-shadow-blue-small:
+          0 0 2px var(--color-white),
+          0 0 10px var(--color-blue);
   --font-size-main: 16px;
 
   /*Theme settings*/
