@@ -1,4 +1,5 @@
 import style from './PersonInfo.module.css'
+import PropTypes from "prop-types";
 
 const PersonInfo = ({personData}) => {
 
@@ -9,6 +10,10 @@ const PersonInfo = ({personData}) => {
             })}
         </div>
     )
+}
+
+PersonInfo.prototype = {
+    personData: PropTypes.array
 }
 
 export default PersonInfo

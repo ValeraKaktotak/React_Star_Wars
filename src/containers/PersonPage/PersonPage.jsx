@@ -26,7 +26,7 @@ const PersonPage = ({setErrorApi}) => {
                     {title: 'gender', data: res.gender},
                     {title: 'hair_color', data: res.hair_color},
                     {title: 'height', data: res.height},
-                    {title: 'homeworld', data: res.homeworld},
+                    {title: 'home_world', data: res.homeworld},
                     {title: 'mass', data: res.mass},
                     {title: 'skin_color', data: res.skin_color},
                 ])
@@ -45,10 +45,10 @@ const PersonPage = ({setErrorApi}) => {
         <div className={style.personPage}>
             {!isLoading ?
                 <PreLoader/>:
-                <div>
-                    <h1>{personName}</h1>
+                <div className={style.wrapper}>
+                    <h1 className={style.personPage__name}>{personName}</h1>
                     <div className={style.personPage__infoBlock}>
-                        <PersonPhoto photo={personImg} />
+                        <PersonPhoto photo={personImg} name={personName} />
                         <PersonInfo personData={person} />
                     </div>
                 </div>
