@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 import style from './PeopleList.module.css'
+import {Link} from "react-router-dom";
 
 const PeopleList = ({people}) => {
     return(
-        <div className={style.HeroList__container}>
+        <div className={style.HeroList}>
             {
                 people.map(({name, id, img}) =>
-                    <div key={id} className={style.HeroList__item}>
+                    <Link to={`/people/${id}`} key={id} className={style.HeroList__item}>
                         <img src={img} alt={name} className={style.HeroList__photo}/>
                         <p className={style.HeroList__name}>{name}</p>
-                    </div>)
+                    </Link>)
             }
         </div>
     )

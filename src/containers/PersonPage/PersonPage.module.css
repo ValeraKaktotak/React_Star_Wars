@@ -1,0 +1,25 @@
+.personPage{
+    --color-name: var(--color-violet);
+    margin-top: 45px;
+}
+.wrapper{
+
+}
+.personPage__name{
+    padding: 10px 15px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    background: var(--color-name);
+    color: var(--color-white);
+    display: inline-block;
+    border-radius: 5px 5px 5px 0;
+}
+.personPage__infoBlock{
+    color: var(--color-white);
+    border-left: 5px solid var(--color-name);
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    padding: 20px;
+}
