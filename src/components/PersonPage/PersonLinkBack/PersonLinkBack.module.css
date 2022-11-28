@@ -1,0 +1,15 @@
+.personLinkBack{
+    display: inline-flex;
+    align-items: center;
+    margin: 30px;
+    color: var(--color-yellow);
+    font-size: 16px;
+    text-shadow: var(--text-shadow-yellow);
+}
+.personLinkBack__img{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    object-fit: cover;
+    object-position: center center;
+}
