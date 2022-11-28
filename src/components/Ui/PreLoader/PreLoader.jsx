@@ -1,9 +1,10 @@
 import style from './PreLoader.module.css'
+import svg from './images/three-dots.svg'
 
 const PreLoader = () => {
     return(
         <div className={style.preloader}>
-            Loading...
+            <img src={svg} alt="loader"/>
         </div>
     )
 }
