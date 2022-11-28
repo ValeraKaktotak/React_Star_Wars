@@ -7,7 +7,7 @@ import {getApiResource} from "../../utils/network";
 import {getPeopleId, getPeopleImg, getPeoplePageCount} from "../../services/getPeopleData";
 import {useQueryParams} from "../../hooks/useQueryParams";
 import {API_PEOPLE} from "../../constants/api";
-import PreLoader from "../../components/PreLoader";
+import PreLoader from "../../components/Ui/PreLoader";
 
 
 const PeoplePage = ({setErrorApi}) => {

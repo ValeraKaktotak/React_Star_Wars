@@ -1,15 +1,19 @@
 import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState, Suspense} from "react";
 import PersonInfo from "../../components/PersonPage/PersonInfo";
 import PersonPhoto from "../../components/PersonPage/PersonPhoto";
-import PersonFilms from "../../components/PersonPage/PersonFilms";
+//import PersonFilms from "../../components/PersonPage/PersonFilms";
 import PersonLinkBack from "../../components/PersonPage/PersonLinkBack";
-import PreLoader from "../../components/PreLoader";
+import PreLoader from "../../components/Ui/PreLoader";
 import withErrorApi from "../../hoc-helpers/withErrorApi";
 import {getApiResource} from "../../utils/network";
 import {getPeopleImg} from "../../services/getPeopleData";
 import {API_PERSON} from "../../constants/api";
 import style from './PersonPage.module.css'
+
+
+const PersonFilms = React.lazy(() => import('../../components/PersonPage/PersonFilms'));
+
 
 const PersonPage = ({setErrorApi}) => {
     let [person, setPerson] = useState(null)
@@ -54,7 +58,11 @@ const PersonPage = ({setErrorApi}) => {
                     <div className={style.personPage__infoBlock}>
                         {personImg && <PersonPhoto photo={personImg} name={personName} />}
                         {person && <PersonInfo personData={person} />}
-                        {personFilms && <PersonFilms personFilms={personFilms} />}
+                        {personFilms &&(
+                            <Suspense fallback={<PreLoader />}>
+                                <PersonFilms personFilms={personFilms} />
+                            </Suspense>
+                            )}
                     </div>
                 </div>
             }
