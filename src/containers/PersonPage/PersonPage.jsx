@@ -8,6 +8,7 @@ import {getPeopleImg} from "../../services/getPeopleData";
 import {API_PERSON} from "../../constants/api";
 import style from './PersonPage.module.css'
 import PersonPhoto from "../../components/PersonPage/PersonPhoto";
+import PersonLinkBack from "../../components/PersonPage/PersonLinkBack";
 
 const PersonPage = ({setErrorApi}) => {
     let [person, setPerson] = useState(null)
@@ -45,6 +46,7 @@ const PersonPage = ({setErrorApi}) => {
             {!isLoading ?
                 <PreLoader/>:
                 <div className={style.wrapper}>
+                    <PersonLinkBack />
                     <h1 className={style.personPage__name}>{personName}</h1>
                     <div className={style.personPage__infoBlock}>
                         <PersonPhoto photo={personImg} name={personName} />
