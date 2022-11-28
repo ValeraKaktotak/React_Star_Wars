@@ -54,7 +54,7 @@ const PersonPage = ({setErrorApi}) => {
                     <div className={style.personPage__infoBlock}>
                         {personImg && <PersonPhoto photo={personImg} name={personName} />}
                         {person && <PersonInfo personData={person} />}
-                        {personFilms && <PersonFilms />}
+                        {personFilms && <PersonFilms personFilms={personFilms} />}
                     </div>
                 </div>
             }
