@@ -1,19 +1,21 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import PersonInfo from "../../components/PersonPage/PersonInfo";
+import PersonPhoto from "../../components/PersonPage/PersonPhoto";
+import PersonFilms from "../../components/PersonPage/PersonFilms";
+import PersonLinkBack from "../../components/PersonPage/PersonLinkBack";
 import PreLoader from "../../components/PreLoader";
 import withErrorApi from "../../hoc-helpers/withErrorApi";
 import {getApiResource} from "../../utils/network";
 import {getPeopleImg} from "../../services/getPeopleData";
 import {API_PERSON} from "../../constants/api";
 import style from './PersonPage.module.css'
-import PersonPhoto from "../../components/PersonPage/PersonPhoto";
-import PersonLinkBack from "../../components/PersonPage/PersonLinkBack";
 
 const PersonPage = ({setErrorApi}) => {
     let [person, setPerson] = useState(null)
     let [personImg, setPersonImg] = useState(null)
     let [personName, setPersonName] = useState(null)
+    let [personFilms, setPersonFilms] = useState(null)
     let [isLoading, setIsLoading] = useState(false)
     let id = useParams().id
 
@@ -31,6 +33,7 @@ const PersonPage = ({setErrorApi}) => {
                     {title: 'Skin color', data: res.skin_color},
                 ])
                 setPersonName(res.name)
+                res.films.length && setPersonFilms(res.films)
                 setPersonImg(getPeopleImg(id))
                 setIsLoading(true)
                 setErrorApi(false)
@@ -49,8 +52,9 @@ const PersonPage = ({setErrorApi}) => {
                     <PersonLinkBack />
                     <h1 className={style.personPage__name}>{personName}</h1>
                     <div className={style.personPage__infoBlock}>
-                        <PersonPhoto photo={personImg} name={personName} />
-                        <PersonInfo personData={person} />
+                        {personImg && <PersonPhoto photo={personImg} name={personName} />}
+                        {person && <PersonInfo personData={person} />}
+                        {personFilms && <PersonFilms />}
                     </div>
                 </div>
             }
