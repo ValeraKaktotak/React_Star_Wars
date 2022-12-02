@@ -4,9 +4,10 @@ import { addPersonToFavorite, removePersonToFavorite } from '../../../store/acti
 import style from './PersonPhoto.module.css'
 
 
-const PersonPhoto = ({photo, name, id}) => {
+const PersonPhoto = ({photo, name, id, favoritePerson, setFavoritePerson}) => {
     const dispatch = useDispatch()
     const setPerson = () => {
+        setFavoritePerson(true)
         dispatch(addPersonToFavorite({
             [id]:{
                 name: name,
@@ -15,13 +16,13 @@ const PersonPhoto = ({photo, name, id}) => {
         }))
     }
     const removePerson = () => {
+        setFavoritePerson(false)
         dispatch(removePersonToFavorite(id))
     }
     return(
         <div className={style.personPhoto}>
             <img className={style.personPhoto__img} src={photo} alt={name}/>
-            <button onClick={setPerson}>Set person</button>
-            <button onClick={removePerson}>Remove person</button>
+            {favoritePerson ? <button onClick={removePerson}>Remove person</button>: <button onClick={setPerson}>Set person</button>}
         </div>
     )
 }
@@ -29,6 +30,8 @@ const PersonPhoto = ({photo, name, id}) => {
 PersonPhoto.prototype = {
     photo: PropTypes.string,
     name: PropTypes.string,
-    id: PropTypes.string
+    id: PropTypes.string,
+    favoritePerson: PropTypes.bool,
+    setFavoritePerson: PropTypes.func
 }
 export default PersonPhoto

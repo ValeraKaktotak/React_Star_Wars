@@ -1,5 +1,6 @@
 import {useParams} from "react-router-dom";
 import React, {useEffect, useState, Suspense} from "react";
+import {useSelector} from "react-redux";
 import PersonInfo from "../../components/PersonPage/PersonInfo";
 import PersonPhoto from "../../components/PersonPage/PersonPhoto";
 //import PersonFilms from "../../components/PersonPage/PersonFilms";
@@ -22,11 +23,15 @@ const PersonPage = ({setErrorApi}) => {
     let [personFilms, setPersonFilms] = useState(null)
     let [isLoading, setIsLoading] = useState(false)
     let [personId, setPersonId] = useState(useParams().id)
+    let [favoritePerson, setFavoritePerson] = useState(false)
 
-    useEffect(()=>{
-        (async()=>{
-            let res = await getApiResource(API_PERSON+personId)
-            if(res){
+    let favoriteList = useSelector(state => state.favorite)
+
+    useEffect(() => {
+        (async () => {
+            let res = await getApiResource(API_PERSON + personId)
+            favoriteList[personId] ? setFavoritePerson(true) : setFavoritePerson(false);
+            if (res) {
                 setPerson([
                     {title: 'Birth year', data: res.result.properties.birth_year},
                     {title: 'Eye color', data: res.result.properties.eye_color},
@@ -41,28 +46,33 @@ const PersonPage = ({setErrorApi}) => {
                 setPersonImg(getPeopleImg(personId))
                 setIsLoading(true)
                 setErrorApi(false)
-            }else{
+            } else {
                 setErrorApi(true)
             }
         })()
     }, [])
 
 
-    return(
+    return (
         <div className={style.personPage}>
             {!isLoading ?
-                <PreLoader/>:
+                <PreLoader/> :
                 <div className={style.wrapper}>
-                    <PersonLinkBack />
+                    <PersonLinkBack/>
                     <h1 className={style.personPage__name}>{personName}</h1>
                     <div className={style.personPage__infoBlock}>
-                        {personImg && <PersonPhoto photo={personImg} name={personName} id={personId} />}
-                        {person && <PersonInfo personData={person} />}
-                        {personFilms &&(
-                            <Suspense fallback={<PreLoader />}>
-                                <PersonFilms personFilms={personFilms} />
+                        {personImg && <PersonPhoto photo={personImg}
+                                                   name={personName}
+                                                   id={personId}
+                                                   favoritePerson={favoritePerson}
+                                                   setFavoritePerson={setFavoritePerson}
+                        />}
+                        {person && <PersonInfo personData={person}/>}
+                        {personFilms && (
+                            <Suspense fallback={<PreLoader/>}>
+                                <PersonFilms personFilms={personFilms}/>
                             </Suspense>
-                            )}
+                        )}
                     </div>
                 </div>
             }
