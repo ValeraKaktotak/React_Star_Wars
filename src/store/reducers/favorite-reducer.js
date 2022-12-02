@@ -1,8 +1,6 @@
 import {ADD_PERSON_TO_FAVORITE, REMOVE_PERSON_TO_FAVORITE} from "../constans/actionTypes";
 
-const initState = {
-    favorite: []
-}
+const initState = {}
 
 const favoriteReducer = (state=initState, action) => {
     switch (action.type){
@@ -11,8 +9,9 @@ const favoriteReducer = (state=initState, action) => {
                 ...state, ...action.payload
             })
         case REMOVE_PERSON_TO_FAVORITE:
+            console.log(state)
             return ({
-                ...state, ...action.payload
+                ...state,
             })
         default: return state
     }

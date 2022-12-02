@@ -1,12 +1,11 @@
-import style from './FavoritePage.module.css'
 import {useSelector} from "react-redux";
+import style from './FavoritePage.module.css'
 
 const FavoritePage = () => {
-    const stateData = useSelector(store => store.favorite)
-    console.log(stateData)
+    const favoritePersons = useSelector(store => store.favorite)
     return(
         <div>
-            Favorite Page
+            Favorite
         </div>
     )
 }
