@@ -3,6 +3,7 @@ import style from './FavoritePage.module.css'
 
 const FavoritePage = () => {
     const favoritePersons = useSelector(store => store.favorite)
+    console.log(favoritePersons)
     return(
         <div>
             Favorite
