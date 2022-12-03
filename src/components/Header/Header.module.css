@@ -11,7 +11,7 @@
     transition: var(--transition);
     border: 2px solid transparent;
 }
-.container :global(a.active){
+.container :global(a.active):not(:last-child){
     border: 2px solid var(--color-violet);
     color: var(--color-violet);
     text-shadow: none;
@@ -25,4 +25,7 @@
 
 .link:not(:last-child){
     margin-right: 20px;
+}
+.favorite{
+    margin-left: auto;
 }

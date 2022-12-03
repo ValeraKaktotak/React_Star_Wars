@@ -1,0 +1,16 @@
+.bookmark__container{
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+.bookmark__img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+.bookmark__counter{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #000;
+}
