@@ -29,7 +29,7 @@ const PeoplePage = ({setErrorApi}) => {
                 return {
                     id: id,
                     name: name,
-                    img: imgUrl
+                    photo: imgUrl
                 }
             })
             setPeople(peopleList)
@@ -55,7 +55,7 @@ const PeoplePage = ({setErrorApi}) => {
                         getApiData={getApiData}
                         peopleCount={peopleCount}
                     />
-                    {people && <PeopleList people={people}/>}}
+                    {people && <PeopleList people={people}/>}
                 </div> :
                 <PreLoader/>
             }

@@ -8,7 +8,6 @@ const Header = () => {
         <div className={style.container}>
             <NavLink className={cn("header__text", style.link)} to="/">Home</NavLink>
             <NavLink className={cn("header__text", style.link)} to="/people?page=1">People</NavLink>
-            <NavLink className={cn("header__text", style.link)} to="/favorite">Favorites</NavLink>
             <NavLink className={cn("header__text", style.link)} to="/not-found">Not Found</NavLink>
             <NavLink className={style.favorite}  to="/favorite"><Favorite /></NavLink>
         </div>

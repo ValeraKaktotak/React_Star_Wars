@@ -6,9 +6,9 @@ const PeopleList = ({people}) => {
     return(
         <div className={style.HeroList}>
             {
-                people.map(({name, id, img}) =>
+                people.map(({name, id, photo}) =>
                     <Link to={`/people/${id}`} key={id} className={style.HeroList__item}>
-                        <img src={img} alt={name} className={style.HeroList__photo}/>
+                        <img src={photo} alt={name} className={style.HeroList__photo}/>
                         <p className={style.HeroList__name}>{name}</p>
                     </Link>)
             }

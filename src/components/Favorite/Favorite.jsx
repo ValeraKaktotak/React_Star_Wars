@@ -7,16 +7,17 @@ const Favorite = () => {
     let [count, setCount] = useState(null)
     let favoriteData = useSelector(state => state.favorite)
 
-    useEffect(()=>{
+    useEffect(() => {
         let keys = Object.keys(favoriteData).length
-        keys > 99 ? setCount('...'): setCount(keys)
+        keys > 99 ? setCount('...') : setCount(keys)
     }, [favoriteData])
 
-    return(
+    return (
         <div className={style.bookmark__container}>
-            {count? <div className={style.bookmark__counter}>
-                <span>{count}</span>
-            </div>: null
+            {count ?
+                <div className={style.bookmark__counter}>
+                    <span>{count}</span>
+                </div> : ''
             }
             <img className={style.bookmark__img} src={bookmark} alt="bookmark"/>
         </div>
