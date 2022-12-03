@@ -4,16 +4,12 @@ import {useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 
 const Favorite = () => {
-    let [count, setCount] = useState(100)
+    let [count, setCount] = useState(null)
     let favoriteData = useSelector(state => state.favorite)
 
     useEffect(()=>{
         let keys = Object.keys(favoriteData).length
-        if(keys > 99){
-            setCount('...')
-        }else {
-            setCount(keys)
-        }
+        keys > 99 ? setCount('...'): setCount(keys)
     }, [favoriteData])
 
     return(
