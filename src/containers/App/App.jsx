@@ -68,7 +68,7 @@ const App = () => {
                             }
                         },
                         "size": {
-                            "value": 3,
+                            "value": 2,
                             "random": true,
                             "anim": {
                                 "enable": false,
@@ -119,14 +119,14 @@ const App = () => {
                                 }
                             },
                             "bubble": {
-                                "distance": 250,
+                                "distance": 150,
                                 "size": 0,
                                 "duration": 2,
                                 "opacity": 0,
                                 "speed": 3
                             },
                             "repulse": {
-                                "distance": 400,
+                                "distance": 300,
                                 "duration": 0.4
                             },
                             "push": {

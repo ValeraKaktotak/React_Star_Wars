@@ -1,0 +1,10 @@
+.favoritePage__container{
+    text-align: center;
+    margin-top: 40px;
+}
+.favoritePage__emptyText{
+    color: var(--color-white);
+    text-shadow: var(--text-shadow-blue);
+    font-size: 24px;
+    font-weight: bold;
+}
