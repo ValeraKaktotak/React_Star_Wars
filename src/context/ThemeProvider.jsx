@@ -3,7 +3,7 @@ import React, {useContext, useState} from 'react'
 const ThemeContext = React.createContext(null)
 
 const ThemeProvider = ({children, ...props}) => {
-    const [theme, setTheme] = useState(null)
+    const [theme, setTheme] = useState('null')
     const changeTheme = name => {
         setTheme(name)
     }
@@ -16,5 +16,5 @@ const ThemeProvider = ({children, ...props}) => {
 }
 
 export default ThemeProvider
-export const useTheme = () => useContext(ThemeProvider)
+export const useTheme = () => useContext(ThemeContext)
 
