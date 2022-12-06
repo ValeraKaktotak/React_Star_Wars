@@ -19,7 +19,11 @@
   --font-size-main: 16px;
 
   /*Theme settings*/
-  --theme-default-header-color: #ffff46;
+  --theme-neutral-header: #dfe2df;
+  --theme-dark-header: #ca6a6f;
+  --theme-light-header: #cccc46;
+  --theme-default-header-color: var(--theme-neutral-header);
+
   --theme-default-background: url("../images/bg.jpg");
 }
 body {
