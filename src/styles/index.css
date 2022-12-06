@@ -22,7 +22,7 @@
   --theme-neutral-header: #dfe2df;
   --theme-dark-header: #ca6a6f;
   --theme-light-header: #ffff00;
-  --theme-default-header-color: var(--theme-neutral-header);
+  --theme-default-header: var(--theme-neutral-header);
 
   --theme-neutral-background: url("../images/reven.jpg");
   --theme-dark-background: url("../images/sith.jpg");
@@ -44,7 +44,7 @@ body {
 
 .header__text{
   line-height: 1.5;
-  color: var(--theme-default-header-color);
+  color: var(--theme-default-header);
   font-size: 26px;
   text-shadow: 0 0 2px var(--color-black);
   transition: color var(--transition);

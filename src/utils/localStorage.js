@@ -7,5 +7,5 @@ export const getLocalStorageData = (key) => {
 }
 
 export const setLocalStorageData = (key, data) => {
-    const setData = localStorage.setItem(key, JSON.stringify(data))
+    localStorage.setItem(key, JSON.stringify(data))
 }
