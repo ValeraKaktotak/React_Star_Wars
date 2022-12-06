@@ -5,4 +5,5 @@ export const changeCssVariables = (theme) => {
 
     //меняем значение css переменной
     root.style.setProperty('--theme-default-header-color', `var(--theme-${theme}-header)`)
+    root.style.setProperty('--theme-default-background', `var(--theme-${theme}-background)`)
 }

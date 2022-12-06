@@ -24,7 +24,11 @@
   --theme-light-header: #cccc46;
   --theme-default-header-color: var(--theme-neutral-header);
 
-  --theme-default-background: url("../images/bg.jpg");
+  --theme-neutral-background: url("../images/reven.jpg");
+  --theme-dark-background: url("../images/sith.jpg");
+  --theme-light-background: url("../images/jedi.jpg");
+  --theme-default-background: var(--theme-neutral-background);
+
 }
 body {
   font-family: sans-serif;
@@ -44,6 +48,7 @@ body {
   text-shadow: 0 0 2px var(--color-black);
   transition: color var(--transition);
   text-decoration: none;
+  font-weight: bold;
 }
 a{
   text-decoration: none;

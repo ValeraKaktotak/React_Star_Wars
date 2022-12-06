@@ -6,8 +6,8 @@ const ThemeContext = React.createContext(null)
 const ThemeProvider = ({children, ...props}) => {
     const [theme, setTheme] = useState('null')
     const changeTheme = name => {
-        changeCssVariables(name)
         setTheme(name)
+        changeCssVariables(name)
     }
 
     return(

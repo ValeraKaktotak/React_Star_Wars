@@ -22,6 +22,7 @@ const FavoritePage = () => {
 
     return(
         <div className={style.favoritePage__container}>
+            <h1 className="header__text">Favorites Page</h1>
             {
                 !people?
                     <span className={style.favoritePage__emptyText}>Список пуст</span>:
