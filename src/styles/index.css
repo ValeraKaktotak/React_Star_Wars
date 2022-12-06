@@ -21,13 +21,14 @@
   /*Theme settings*/
   --theme-neutral-header: #dfe2df;
   --theme-dark-header: #ca6a6f;
-  --theme-light-header: #cccc46;
+  --theme-light-header: #ffff00;
   --theme-default-header-color: var(--theme-neutral-header);
 
   --theme-neutral-background: url("../images/reven.jpg");
   --theme-dark-background: url("../images/sith.jpg");
   --theme-light-background: url("../images/jedi.jpg");
-  --theme-default-background: var(--theme-neutral-background);
+  --theme-started-background: url("../images/bg.jpg");
+  --theme-default-background: var(--theme-started-background);
 
 }
 body {
