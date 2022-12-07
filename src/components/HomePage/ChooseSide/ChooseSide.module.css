@@ -1,0 +1,15 @@
+.wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+.item{
+    width: 200px;
+    cursor: pointer;
+}
+.item__text{
+
+}
+.item__img{
+    width: 100%;
+    opacity: .75;
+}

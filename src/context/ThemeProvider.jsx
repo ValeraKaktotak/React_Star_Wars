@@ -4,10 +4,10 @@ import {changeCssVariables} from "../services/changeCssVariables";
 const ThemeContext = React.createContext(null)
 
 const ThemeProvider = ({children, ...props}) => {
-    const [theme, setTheme] = useState(null)
+    const [theme, setTheme] = useState('')
     const changeTheme = name => {
-        changeCssVariables(name)
         setTheme(name)
+        changeCssVariables(name)
     }
 
     return(
