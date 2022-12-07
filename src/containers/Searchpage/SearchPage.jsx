@@ -1,9 +1,10 @@
 import {useState} from "react";
 import withErrorApi from "../../hoc-helpers/withErrorApi";
+import SearchPageInfo from "../../components/SearchPage/SearchPageInfo";
 import {getApiResource} from "../../utils/network";
+import {getPeopleId, getPeopleImg} from "../../services/getPeopleData";
 import {API_SEARCH} from "../../constants/api";
 import style from './SearchPage.module.css'
-import {getPeopleId, getPeopleImg} from "../../services/getPeopleData";
 
 const SearchPage = ({setErrorApi}) => {
     const [searchValue, setSearchValue] = useState('')
@@ -44,6 +45,9 @@ const SearchPage = ({setErrorApi}) => {
                 onChange={handleInputChange}
                 placeholder="Input characters names"
             />
+            {people.map((element)=>{
+                return <SearchPageInfo key={element.id} {...element} />
+            })}
         </>
     )
 }
