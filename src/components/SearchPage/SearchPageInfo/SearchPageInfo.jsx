@@ -1,9 +1,22 @@
 import style from './SearchPageInfo.module.css'
+import {Link} from "react-router-dom";
 
-const SearchPageInfo = ({img, name, id}) => {
+const SearchPageInfo = ({people}) => {
     return(
         <div>
-            Search info
+            {people.length?
+                <ul>
+                    {people.map(({name, id, img})=>(
+                        <Link key={id} to={`/people/${id}`} >
+                            <li>
+                                <img src={img} alt={name}/>
+                                <p>{name}</p>
+                            </li>
+                        </Link>
+                    ))}
+                </ul>:
+                <h1>No data</h1>
+            }
         </div>
     )
 }

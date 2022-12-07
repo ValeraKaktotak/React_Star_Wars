@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import withErrorApi from "../../hoc-helpers/withErrorApi";
 import SearchPageInfo from "../../components/SearchPage/SearchPageInfo";
 import {getApiResource} from "../../utils/network";
@@ -9,7 +9,6 @@ import style from './SearchPage.module.css'
 const SearchPage = ({setErrorApi}) => {
     const [searchValue, setSearchValue] = useState('')
     const [people, setPeople] = useState([])
-
 
     const getResponse = async (param) => {
         const searchResponse = await getApiResource(API_SEARCH+param)
@@ -32,6 +31,10 @@ const SearchPage = ({setErrorApi}) => {
         }
     }
 
+    useEffect(()=>{
+        getResponse('')
+    },[])
+
     const handleInputChange = (e) =>{
         setSearchValue(e.target.value)
         getResponse(e.target.value)
@@ -45,9 +48,7 @@ const SearchPage = ({setErrorApi}) => {
                 onChange={handleInputChange}
                 placeholder="Input characters names"
             />
-            {people.map((element)=>{
-                return <SearchPageInfo key={element.id} {...element} />
-            })}
+            <SearchPageInfo people={people} />
         </>
     )
 }
