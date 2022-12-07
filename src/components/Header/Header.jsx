@@ -34,6 +34,7 @@ const Header = () => {
             </div>
             <NavLink className={cn("header__text", style.link)} to="/">Home</NavLink>
             <NavLink className={cn("header__text", style.link)} to="/people?page=1">People</NavLink>
+            <NavLink className={cn("header__text", style.link)} to="/search">Search</NavLink>
             <NavLink className={cn("header__text", style.link)} to="/not-found">Not Found</NavLink>
             <NavLink className={style.favorite}  to="/favorite"><Favorite /></NavLink>
         </div>
