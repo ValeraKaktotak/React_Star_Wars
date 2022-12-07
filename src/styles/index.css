@@ -21,7 +21,7 @@
   /*Theme settings*/
   --theme-neutral-header: #dfe2df;
   --theme-dark-header: #ca6a6f;
-  --theme-light-header: #ffff00;
+  --theme-light-header: #78b438;
   --theme-default-header: var(--theme-neutral-header);
 
   --theme-neutral-background: url("../images/reven.jpg");
