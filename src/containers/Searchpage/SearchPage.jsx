@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import withErrorApi from "../../hoc-helpers/withErrorApi";
 import SearchPageInfo from "../../components/SearchPage/SearchPageInfo";
 import {getApiResource} from "../../utils/network";
@@ -36,7 +36,10 @@ const SearchPage = ({setErrorApi}) => {
         getResponse('')
     },[])
 
-    const debounceGetResponse = debounce((value)=> getResponse(value), 1000)
+    const debounceGetResponse = useCallback(
+        debounce((value)=> getResponse(value), 1000),
+        []
+    )
 
     const handleInputChange = (e) =>{
         setSearchValue(e.target.value)
