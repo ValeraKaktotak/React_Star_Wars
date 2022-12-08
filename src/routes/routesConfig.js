@@ -4,6 +4,7 @@ import NotFoundPage from "../containers/NotFoundPage";
 import PersonPage from "../containers/PersonPage";
 import FavoritePage from "../containers/FavoritePage";
 import SearchPage from "../containers/Searchpage";
+import ErrorMessage from "../components/ErrorMessage";
 
 
 const routesConfig = [
@@ -26,6 +27,10 @@ const routesConfig = [
     {
         path: "/favorite",
         component: FavoritePage
+    },
+    {
+        path: "/fail",
+        component: ErrorMessage
     },
     {
         path: "*",
