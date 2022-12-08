@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import cn from 'classnames'
+import closeIcon from './images/close.svg'
 import style from './UiInput.module.css'
 
 const UiInput = ({
@@ -8,12 +10,19 @@ const UiInput = ({
      classes
 }) => {
     return (
-        <div>
+        <div className={cn(style.input__wrapper, classes)}>
             <input
                 type="text"
                 value={value}
-                onChange={handleInputChange}
+                onChange={(e)=>handleInputChange(e.target.value)}
                 placeholder={placeholder}
+                className={style.input}
+            />
+            <img
+                src={closeIcon}
+                alt="close"
+                className={cn(style.input__clear, !value && style.input__clear_disabled)}
+                onClick={() => value && handleInputChange('')}
             />
         </div>
     )

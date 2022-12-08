@@ -42,9 +42,9 @@ const SearchPage = ({setErrorApi}) => {
         []
     )
 
-    const handleInputChange = (e) =>{
-        setSearchValue(e.target.value)
-        debounceGetResponse(e.target.value)
+    const handleInputChange = (value) =>{
+        setSearchValue(value)
+        debounceGetResponse(value)
     }
     return(
         <>
