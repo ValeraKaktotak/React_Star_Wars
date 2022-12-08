@@ -5,6 +5,7 @@ import {getApiResource} from "../../utils/network";
 import {getPeopleId, getPeopleImg} from "../../services/getPeopleData";
 import {API_SEARCH} from "../../constants/api";
 import style from './SearchPage.module.css'
+import {debounce} from "lodash";
 
 const SearchPage = ({setErrorApi}) => {
     const [searchValue, setSearchValue] = useState('')
@@ -35,9 +36,11 @@ const SearchPage = ({setErrorApi}) => {
         getResponse('')
     },[])
 
+    const debounceGetResponse = debounce((value)=> getResponse(value), 1000)
+
     const handleInputChange = (e) =>{
         setSearchValue(e.target.value)
-        getResponse(e.target.value)
+        debounceGetResponse(e.target.value)
     }
     return(
         <>

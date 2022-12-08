@@ -7,8 +7,8 @@ const SearchPageInfo = ({people}) => {
             {people.length ?
                 <ul className={style.pageInfo__list}>
                     {people.map(({name, id, img}) => (
-                        <li className={style.pageInfo__item}>
-                            <Link key={id} to={`/people/${id}`}>
+                        <li key={id} className={style.pageInfo__item}>
+                            <Link to={`/people/${id}`}>
                                 <img className={style.pageInfo__image} src={img} alt={name}/>
                                 <p className={style.pageInfo__name}>{name}</p>
                             </Link>
