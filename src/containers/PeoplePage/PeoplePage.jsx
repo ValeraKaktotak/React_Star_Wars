@@ -56,6 +56,11 @@ const PeoplePage = ({setErrorApi}) => {
                         peopleCount={peopleCount}
                     />
                     {people && <PeopleList people={people}/>}
+                    <PeopleNavigation
+                        pageCount={pageCount}
+                        getApiData={getApiData}
+                        peopleCount={peopleCount}
+                    />
                 </div> :
                 <PreLoader/>
             }

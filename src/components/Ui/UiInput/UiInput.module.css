@@ -1,0 +1,29 @@
+.input{
+    min-width: 300px;
+    padding: 10px 25px;
+    border: 3px solid var(--color-gray);
+    border-radius: 3px;
+    outline: none;
+    font-size: 16px;
+}
+.input:focus{
+    border-color: var(--color-violet);
+}
+.input__wrapper{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-flex;
+}
+.input__clear{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 24px;
+    height: calc(100% - 6px);
+    opacity: .4;
+    cursor: pointer;
+}
+.input__clear_disabled{
+    opacity: .2;
+}

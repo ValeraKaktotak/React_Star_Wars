@@ -6,7 +6,8 @@ import Favorite from "../Favorite";
 import {THEME_NEUTRAL, THEME_LIGHT, THEME_DARK} from "../../constants/theme";
 import lightIcon from './images/jedi.svg'
 import darkIcon from './images/sith.svg'
-import neutralIcon from './images/rebel.svg'
+import ravenIcon from './images/rebel.svg'
+import catIcon from './images/cat.svg'
 import style from './Header.module.css'
 
 const Header = () => {
@@ -22,9 +23,9 @@ const Header = () => {
                 setLogoImg(darkIcon)
                 break;
             case THEME_NEUTRAL:
-                setLogoImg(neutralIcon)
+                setLogoImg(ravenIcon)
                 break;
-            default: setLogoImg(neutralIcon)
+            default: setLogoImg(catIcon)
         }
     },[isTheme])
     return(
@@ -34,6 +35,7 @@ const Header = () => {
             </div>
             <NavLink className={cn("header__text", style.link)} to="/">Home</NavLink>
             <NavLink className={cn("header__text", style.link)} to="/people?page=1">People</NavLink>
+            <NavLink className={cn("header__text", style.link)} to="/search">Search</NavLink>
             <NavLink className={cn("header__text", style.link)} to="/not-found">Not Found</NavLink>
             <NavLink className={style.favorite}  to="/favorite"><Favorite /></NavLink>
         </div>

@@ -33,16 +33,16 @@ const PersonPage = ({setErrorApi}) => {
             favoriteList[personId] ? setFavoritePerson(true) : setFavoritePerson(false);
             if (res) {
                 setPerson([
-                    {title: 'Birth year', data: res.result.properties.birth_year},
-                    {title: 'Eye color', data: res.result.properties.eye_color},
-                    {title: 'Gender', data: res.result.properties.gender},
-                    {title: 'Hair color', data: res.result.properties.hair_color},
-                    {title: 'Height', data: res.result.properties.height},
-                    {title: 'Mass', data: res.result.properties.mass},
-                    {title: 'Skin color', data: res.result.properties.skin_color},
+                    {title: 'Birth year', data: res.birth_year},
+                    {title: 'Eye color', data: res.eye_color},
+                    {title: 'Gender', data: res.gender},
+                    {title: 'Hair color', data: res.hair_color},
+                    {title: 'Height', data: res.height},
+                    {title: 'Mass', data: res.mass},
+                    {title: 'Skin color', data: res.skin_color},
                 ])
-                setPersonName(res.result.properties.name)
-                //res.result.properties.films.length && setPersonFilms(res.result.properties.films)
+                setPersonName(res.name)
+                res.films.length && setPersonFilms(res.films)
                 setPersonImg(getPeopleImg(personId))
                 setIsLoading(true)
                 setErrorApi(false)

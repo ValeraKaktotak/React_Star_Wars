@@ -1,0 +1,43 @@
+.pageInfo__list{
+    column-count: 3;
+    margin: 20px 0;
+    padding: 0;
+    list-style-type: none;
+}
+.pageInfo__item{
+
+}
+.pageInfo__item a{
+    display: inline-flex;
+    color: var(--color-black);
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+.pageInfo__image{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 5px;
+}
+.pageInfo__name{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0 10px;
+    color: var(--color-white);
+}
+.pageInfo__comment{
+
+}
+@media screen and (max-width: 850px) {
+    .pageInfo__list{
+        column-count: 2;
+    }
+}
+@media screen and (max-width: 600px) {
+    .pageInfo__list{
+        column-count: 1;
+    }
+}
