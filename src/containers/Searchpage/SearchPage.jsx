@@ -1,11 +1,12 @@
 import {useCallback, useEffect, useState} from "react";
+import {debounce} from "lodash";
 import withErrorApi from "../../hoc-helpers/withErrorApi";
 import SearchPageInfo from "../../components/SearchPage/SearchPageInfo";
+import UiInput from "../../components/Ui/UiInput";
 import {getApiResource} from "../../utils/network";
 import {getPeopleId, getPeopleImg} from "../../services/getPeopleData";
 import {API_SEARCH} from "../../constants/api";
 import style from './SearchPage.module.css'
-import {debounce} from "lodash";
 
 const SearchPage = ({setErrorApi}) => {
     const [searchValue, setSearchValue] = useState('')
@@ -37,7 +38,7 @@ const SearchPage = ({setErrorApi}) => {
     },[])
 
     const debounceGetResponse = useCallback(
-        debounce((value)=> getResponse(value), 1000),
+        debounce((value)=> getResponse(value), 300),
         []
     )
 
@@ -48,11 +49,11 @@ const SearchPage = ({setErrorApi}) => {
     return(
         <>
             <h1 className="header__text">Search Page</h1>
-            <input
-                type="text"
+            <UiInput
                 value={searchValue}
-                onChange={handleInputChange}
+                handleInputChange={handleInputChange}
                 placeholder="Input characters names"
+                classes={style.input__search}
             />
             <SearchPageInfo people={people} />
         </>
