@@ -2,20 +2,20 @@ import style from './SearchPageInfo.module.css'
 import {Link} from "react-router-dom";
 
 const SearchPageInfo = ({people}) => {
-    return(
+    return (
         <div>
-            {people.length?
-                <ul>
-                    {people.map(({name, id, img})=>(
-                        <Link key={id} to={`/people/${id}`} >
-                            <li>
-                                <img src={img} alt={name}/>
-                                <p>{name}</p>
-                            </li>
-                        </Link>
+            {people.length ?
+                <ul className={style.pageInfo__list}>
+                    {people.map(({name, id, img}) => (
+                        <li className={style.pageInfo__item}>
+                            <Link key={id} to={`/people/${id}`}>
+                                <img className={style.pageInfo__image} src={img} alt={name}/>
+                                <p className={style.pageInfo__name}>{name}</p>
+                            </Link>
+                        </li>
                     ))}
-                </ul>:
-                <h1>No data</h1>
+                </ul> :
+                <h1 className={style.pageInfo__comment}>No data</h1>
             }
         </div>
     )
