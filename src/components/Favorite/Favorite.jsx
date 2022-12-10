@@ -1,7 +1,7 @@
-import style from './Favorite.module.css'
-import bookmark from './images/favorite_bookmark.svg'
-import {useSelector} from "react-redux";
 import {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
+import bookmark from './images/favorite_bookmark.svg'
+import style from './Favorite.module.css'
 
 const Favorite = () => {
     let [count, setCount] = useState(null)

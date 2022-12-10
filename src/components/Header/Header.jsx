@@ -25,7 +25,7 @@ const Header = () => {
             case THEME_NEUTRAL:
                 setLogoImg(ravenIcon)
                 break;
-            default: setLogoImg(catIcon)
+            default: setLogoImg(ravenIcon)
         }
     },[isTheme])
     return(

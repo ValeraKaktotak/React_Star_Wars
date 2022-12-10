@@ -12,10 +12,12 @@
 .wrapper{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .item{
     width: 250px;
     height: 400px;
+    margin: 0 20px 40px 20px;
     cursor: pointer;
     text-align: center;
     border-radius: 20px;
