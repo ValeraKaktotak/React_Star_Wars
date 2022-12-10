@@ -33,3 +33,10 @@
     width: 100px;
     height: 100px;
 }
+
+@media screen and (max-width: 940px){
+    .container a{
+        width: 100%;
+        text-align: center;
+    }
+}
